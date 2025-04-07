@@ -1,5 +1,4 @@
 package org.example.calcularIdade;
-import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
