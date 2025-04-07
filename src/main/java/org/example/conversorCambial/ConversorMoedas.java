@@ -1,4 +1,4 @@
-package org.example.conversor_cambial;
+package org.example.conversorCambial;
 import java.util.Scanner;
 
 public class ConversorMoedas {

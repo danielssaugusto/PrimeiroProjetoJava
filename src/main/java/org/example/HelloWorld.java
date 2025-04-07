@@ -1,5 +1,6 @@
 package org.example;
-import org.example.conversor_cambial.ConversorMoedas;
+import org.example.calcularIdade.CalcularIdadeEmDias;
+import org.example.conversorCambial.ConversorMoedas;
 import org.example.formulario.Formulario;
 import org.example.mediaNotas.MediaNotas;
 
@@ -23,7 +24,9 @@ public class HelloWorld {
                     
                     [3] Converter Reais para moedas estrangeiras\
                     
-                    [4] Sair""");
+                    [4] Calcular idade em dias\
+                    
+                    [5] Sair""");
 
             byte escolhaDoUsuario = scanner.nextByte();
 
@@ -69,6 +72,22 @@ public class HelloWorld {
                     }
                 }
                 case 4 -> {
+                    System.out.println("Digite o dia do seu nascimento:");
+                    byte dia = scanner.nextByte();
+
+                    System.out.println("Digite o mês do seu nascimento:");
+                    byte mes = scanner.nextByte();
+
+                    System.out.println("Digite o ano do seu nascimento:");
+                    short ano = scanner.nextShort();
+
+                    CalcularIdadeEmDias.DataNascimento dataNascimento = new CalcularIdadeEmDias.DataNascimento(dia, mes, ano);
+
+                    long idadeEmDias = CalcularIdadeEmDias.calcularIdadeEmDias(dataNascimento);
+
+                    System.out.println("Sua idade em dias é: " + idadeEmDias);
+                }
+                case 5 -> {
                     System.out.println("Saindo do programa...");
                     scanner.close();
                     return;
