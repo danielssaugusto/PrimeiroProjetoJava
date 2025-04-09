@@ -1,4 +1,5 @@
 package org.example;
+import org.example.calculadoraDescontos.CalculadoraDescontos;
 import org.example.calcularIdade.CalcularIdadeEmDias;
 import org.example.conversorCambial.ConversorMoedas;
 import org.example.formulario.Formulario;
@@ -26,7 +27,9 @@ public class HelloWorld {
                     
                     [4] Calcular idade em dias\
                     
-                    [5] Sair""");
+                    [5] Calcular desconto sobre o valor da compra\
+                    
+                    [6] Sair""");
 
             byte escolhaDoUsuario = scanner.nextByte();
 
@@ -88,6 +91,12 @@ public class HelloWorld {
                     System.out.println("Sua idade em dias é: " + idadeEmDias);
                 }
                 case 5 -> {
+                    System.out.println("Digite o valor total da compra:");
+                    CalculadoraDescontos.valorCompra = scanner.nextDouble();
+                    CalculadoraDescontos calculadoraDescontos = new CalculadoraDescontos();
+                    calculadoraDescontos.calculoDesconto();
+                }
+                case 6 -> {
                     System.out.println("Saindo do programa...");
                     scanner.close();
                     return;
